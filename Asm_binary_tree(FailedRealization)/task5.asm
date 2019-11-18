@@ -1,9 +1,10 @@
 .data
 	#sequence:	.word	'+', '*', 56, 11, 77  			#answer is (11*77) + 56 = 903 
 	#sequence:	.word	'+', '*', 56, 0, 77  			#answer is (0*77) + 56 = 56
-	sequence:	.word	'+', '*', '*', 11, 77, 1, 56		#answer is (11*77) + (56*1) = 903
+	#sequence:	.word	'+', '*', '*', 11, 77, 1, 56		#answer is (11*77) + (56*1) = 903
+	sequence:	.word	'-', '*', 6, 1, 7			#answer is (1*7) - 6 = 1
 	exec_seq:	.word	
-	num_of_elems:	.word	7
+	num_of_elems:	.word	5
 	
 .text
 	main:
@@ -206,7 +207,7 @@ mul_a1_a2:
 	j	after_operation	
 	
 sub_a1_a2:
-	sub	$a3,	$a2,	$a2
+	sub	$a3,	$a1,	$a2
 	sw,	$a3,	exec_seq($t1)		#кидаем резульат в то место, откуда считали операцию
 	
 	#выгружаем предыдущий результат перед новополучнным значением, запоминаем полученнный результат

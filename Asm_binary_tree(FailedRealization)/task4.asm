@@ -1,16 +1,15 @@
 .data
-	sequence:	.word	1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,   			#answer is 8 9 4 10 11 5 6 7 2 3 1
+	#sequence:	.word	1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,   			#answer is 8 9 4 10 11 5 6 7 2 3 1
 	#sequence:	.word	1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15  	#answer is 8 9 4 10 11 5 12 13 6 14 15 7 2 3 1
 	#sequence:	.word	32, 4, 56, 11, 77, 89				   	#answer is 11 77 4 89 56 32
 	#sequence:	.word	32, 4, 56, 11, 77, 89, 67			   	#answer is 11 77 4 89 67 56 32
 	#sequence:	.word	32, 4, 56,				   		#answer is 4 56 32
 	#sequence:	.word	32, 4,				   			#answer is 4 32
-	#еякх асдере пюяйнлемвхбюрэ ме гюасдэре онлемърэ йнкхвеярбн щкелемрнб оепбни ярпнвйни б MAIN
+	sequence:	.word	1, 2, 3, 4, 5, 6, 7, 8					#answer is 8 4 5 6 7 2 3 1
+
+	num_of_elems:	.word	8
 	
 	space_str:	.asciiz	" " 
-	
-	num_of_elems:	.word	11
-	
 .text
 	main:
 #Number of elements
@@ -145,7 +144,7 @@ print_space:
 	#Printing an string element in a0 register
 	li	$v0,	4
 	syscall
-	#Reterning into the main program to the moment? where this func was called
+	#Reterning into the main program to the moment, where this func was called
 	jr	$ra
 	
 print_a0:
